@@ -20,11 +20,11 @@ This is a simple example of how to build a static library in C. The example is b
 ## Building the Static Library
 
 The static library is built using the following steps:
-1- Compile the source files in the `src` directory to object files.
-2- Archive the object files into a static library.
-3- Move the static library to the `bin/lib` directory.
-4- Move the header files to the `bin/include` directory.
-5- Compile the test program in the `bin` directory and link it with the static library.
+1 - Compile the source files in the `src` directory to object files.
+2 - Archive the object files into a static library.
+3 - Move the static library to the `bin/lib` directory.
+4 - Move the header files to the `bin/include` directory.
+5 - Compile the test program in the `bin` directory and link it with the static library.
 
 The build script is provided in the `Makefile`. To build the static library, run the following command:
 
