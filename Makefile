@@ -4,9 +4,11 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -I$(INCLUDE_DIRS)
 
+BUILD_DIR = bin
+
 # Library-specific settings
 LIB_NAME = libMathLib.a
-LIB_DIR = bin/lib
+LIB_DIR = $(BUILD_DIR)/lib
 LIB_SRC = src/*.c
 LIB_OBJ = $(LIB_SRC:.c=.o)
 
@@ -14,7 +16,7 @@ LIB_OBJ = $(LIB_SRC:.c=.o)
 INCLUDE_DIRS = bin/include
 
 # Test program settings
-TEST_NAME = bin/test
+TEST_NAME = $(BUILD_DIR)/test
 TEST_SRC = test/main.c 
 TEST_OBJ = $(TEST_SRC:.c=.o)
 
@@ -47,9 +49,10 @@ clean_obj:
 	rm -f $(LIB_OBJ) $(TEST_OBJ)
 	echo "Object files removed"
 
-# Clean up
+# Clean up all
 clean:
-	rm -f $(LIB_OBJ) $(TEST_OBJ) $(LIB_DIR)/$(LIB_NAME) $(TEST_NAME) $(INCLUDE_DIRS)/*
+	rm -f $(LIB_OBJ) $(TEST_OBJ) 
+	rm -r $(BUILD_DIR)				# BE CAREFUL WITH THIS COMMAND
 	echo "Cleaned up"
 
 # Run the test program

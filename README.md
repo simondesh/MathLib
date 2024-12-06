@@ -55,7 +55,6 @@ make clean
 it will also remove the test program and library.
 
 to clean only the object files, run the following command:
-
 ```bash
 make clean_obj
 ```
